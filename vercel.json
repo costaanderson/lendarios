@@ -1,0 +1,18 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "vite",
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "VITE_USE_REAL_API": "@vite_use_real_api",
+    "DB_HOST": "@db_host",
+    "DB_USER": "@db_user",
+    "DB_PASS": "@db_pass",
+    "DB_NAME": "@db_name"
+  }
+}
