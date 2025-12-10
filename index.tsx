@@ -21,7 +21,8 @@ import { GoogleGenAI } from "@google/genai";
   5. Altere a constante USE_REAL_API abaixo para 'true'.
 */
 
-const USE_REAL_API = false; // <-- Mude para TRUE quando tiver o backend na Vercel configurado
+// Ativa o uso da API real quando `VITE_USE_REAL_API=true` nas vars de ambiente (Vite/Vercel)
+const USE_REAL_API = (import.meta.env.VITE_USE_REAL_API === 'true'); // <-- configurar em .env / Vercel
 
 // --- Tipos ---
 interface Goleiro {
