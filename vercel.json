@@ -9,10 +9,10 @@
     }
   },
   "env": {
-    "VITE_USE_REAL_API": "@vite_use_real_api",
-    "DB_HOST": "@db_host",
-    "DB_USER": "@db_user",
-    "DB_PASS": "@db_pass",
-    "DB_NAME": "@db_name"
+    "VITE_USE_REAL_API": "true",
+    "DB_HOST": "162.241.203.142",
+    "DB_USER": "onmitd99_anderson",
+    "DB_PASS": "Floripa@2025",
+    "DB_NAME": "onmitd99_goleiros"
   }
 }
