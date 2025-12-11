@@ -72,11 +72,15 @@ const DbService = {
     list: async (): Promise<Goleiro[]> => {
       if (USE_REAL_API) {
         try {
+          console.log('[DB] Fetching goleiros from /api/goleiros');
           const response = await fetch('/api/goleiros'); // Rota que você criará na Vercel
-          if (!response.ok) throw new Error('Falha na API');
-          return await response.json();
+          console.log('[DB] Response status:', response.status);
+          if (!response.ok) throw new Error(`API error: ${response.status}`);
+          const data = await response.json();
+          console.log('[DB] Data received:', data);
+          return data;
         } catch (e) {
-          console.error("Erro API, usando mock", e);
+          console.error("[DB] Erro API, usando mock", e);
           return MOCK_DB.goleiros;
         }
       }
