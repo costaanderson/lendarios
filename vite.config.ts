@@ -6,7 +6,12 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     
     // Na Vercel, as variáveis de ambiente vêm do process.env
-    const viteUseRealApi = process.env.VITE_USE_REAL_API || env.VITE_USE_REAL_API || 'false';
+    // Tenta: process.env primeiro (Vercel), depois env (arquivo .env local)
+    const viteUseRealApi = process.env.VITE_USE_REAL_API === 'true' || env.VITE_USE_REAL_API === 'true' ? 'true' : 'false';
+    
+    console.log('[VITE CONFIG] process.env.VITE_USE_REAL_API:', process.env.VITE_USE_REAL_API);
+    console.log('[VITE CONFIG] env.VITE_USE_REAL_API:', env.VITE_USE_REAL_API);
+    console.log('[VITE CONFIG] Final viteUseRealApi:', viteUseRealApi);
     
     return {
       server: {
