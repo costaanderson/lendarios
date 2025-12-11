@@ -2,12 +2,14 @@ import mysql from 'mysql2/promise';
 
 console.log('[DB] Initializing connection pool with:', {
   host: process.env.DB_HOST,
+  port: process.env.DB_PORT || 3306,
   user: process.env.DB_USER,
   database: process.env.DB_NAME,
 });
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
+  port: process.env.DB_PORT || 3306,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,

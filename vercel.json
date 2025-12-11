@@ -6,6 +6,7 @@
   "env": {
     "VITE_USE_REAL_API": "true",
     "DB_HOST": "162.241.203.142",
+    "DB_PORT": "3306",
     "DB_USER": "onmitd99_anderson",
     "DB_PASS": "Floripa@2025",
     "DB_NAME": "onmitd99_goleiros"
