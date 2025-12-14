@@ -19,11 +19,13 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
 } catch (err) {
   console.error('[API goleiros] ERRO COMPLETO:', err);
+
   return res.status(500).json({
     error: 'DB error',
-    code: err.code,
-    message: err.message,
-    stack: err.stack,
+    debug: {
+      code: err.code,
+      message: err.message,
+    }
   });
 }
 
